@@ -23,11 +23,14 @@ function SignUp() {
   const [isError, setIsError] = useState();
 
   function onSubmit(data) {
-    axios.post('/users.json', {
-      user: {
-        full_name: data.full_name,
-        email: data.email,
-        password: data.password
+    axios.post('/accounts', {
+      account: {
+        name: data.name,
+        users_attributes: [{
+          full_name: data.full_name,
+          email: data.email,
+          password: data.password
+        }]
       }
     })
     .then(() => {
@@ -37,14 +40,17 @@ function SignUp() {
       console.log(error)
       setIsError(true)
       const errors = error.response.data.errors
-      if (errors.full_name) {
-        setError('full_name', { type: "manual", message: `Full name ${errors.full_name[0]}` })
+      if (errors["users.full_name"]) {
+        setError('full_name', { type: "manual", message: `Full name ${errors["users.full_name"][0]}` })
       }
-      if (errors.email) {
-        setError('email', { type: "manual", message: `Email ${errors.email[0]}` })
+      if (errors["users.email"]) {
+        setError('email', { type: "manual", message: `Email ${errors["users.email"][0]}` })
       }
-      if (errors.password) {
-        setError('password', { type: "manual", message: `Password ${errors.password[0]}` })
+      if (errors["users.password"]) {
+        setError('password', { type: "manual", message: `Password ${errors["users.password"][0]}` })
+      }
+      if (errors["name"]) {
+        setError('name', { type: "manual", message: `Name ${errors["name"][0]}` })
       }
     })
   }
@@ -54,6 +60,18 @@ function SignUp() {
       <h2>Sign up</h2>
       {isError && <Typography color='secondary'>Signup failed</Typography>}
       <form onSubmit={handleSubmit(onSubmit)}>
+        <TextField
+          error={!!errors.name}
+          helperText={errors.name?.message}
+          inputRef={register}
+          autoFocus
+          fullWidth
+          margin="normal"
+          label="Company name"
+          name="name"
+          type="text"
+          placeholder="Google"
+        />
         <TextField
           error={!!errors.full_name}
           helperText={errors.full_name?.message}

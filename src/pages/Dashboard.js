@@ -4,7 +4,7 @@ import useUser from '../hooks/use-user';
 
 function Dashboard() {
   const { mutate } = useUser();
-  const [message, setMessage] = useState()
+  const [message, setMessage] = useState();
 
   useEffect(() => {
     axios.get('/dashboard')
