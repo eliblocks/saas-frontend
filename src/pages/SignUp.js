@@ -37,7 +37,6 @@ function SignUp() {
       history.push('/confirmation_email_sent');
     })
     .catch(error => {
-      console.log(error)
       setIsError(true)
       const errors = error.response.data.errors
       if (errors["users.full_name"]) {

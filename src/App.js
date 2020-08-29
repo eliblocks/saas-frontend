@@ -14,6 +14,9 @@ import EditPassword from './pages/EditPassword';
 import ResetEmailSent from './pages/ResetEmailSent';
 import ConfirmationEmailSent from './pages/ConfirmationEmailSent';
 import EmailConfirmation from './pages/EmailConfirmation';
+import AcceptInvitation from './pages/AcceptInvitation';
+
+import Team from './pages/Team';
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,8 +25,11 @@ import {
 } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
   content: {
-    marginLeft: 240,
+    flexGrow: 1,
     paddingTop: theme.spacing(3),
     paddingLeft: theme.spacing(6),
     paddingRight: theme.spacing(6)
@@ -53,7 +59,7 @@ function AuthenticatedApp() {
   const classes = useStyles();
 
   return (
-    <div>
+    <div className={classes.root}>
       <AppDrawer />
       <Container className={classes.content}>
         <Switch>
@@ -67,7 +73,7 @@ function AuthenticatedApp() {
             <Profile />
           </Route>
           <Route path="/team">
-            <Profile />
+            <Team />
           </Route>
           <Route path="/billing">
             <Profile />
@@ -106,6 +112,9 @@ function UnauthenticatedApp() {
         </Route>
         <Route path="/confirm_email">
           <EmailConfirmation />
+        </Route>
+        <Route path="/accept_invitation">
+          <AcceptInvitation />
         </Route>
         <Redirect to="/login" />
       </Switch>

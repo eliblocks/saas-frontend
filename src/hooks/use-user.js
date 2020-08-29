@@ -10,7 +10,7 @@ export default function useUser() {
 		{ shouldRetryOnError: false, revalidateOnFocus: false }
 	)
 	const loading = !data && !error;
-	const loggedOut = !!error
+	const loggedOut = !!error;
 
 	return {
 		mutate,
