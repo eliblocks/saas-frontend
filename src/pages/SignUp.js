@@ -29,7 +29,8 @@ function SignUp() {
         users_attributes: [{
           full_name: data.full_name,
           email: data.email,
-          password: data.password
+          password: data.password,
+          admin: true,
         }]
       }
     })

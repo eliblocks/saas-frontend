@@ -8,13 +8,14 @@ import AppDrawer from './components/AppDrawer'
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
-import Profile from './pages/Profile';
+import Tasks from './pages/Tasks';
 import ResetPassword from './pages/ResetPassword';
 import EditPassword from './pages/EditPassword';
 import ResetEmailSent from './pages/ResetEmailSent';
 import ConfirmationEmailSent from './pages/ConfirmationEmailSent';
 import EmailConfirmation from './pages/EmailConfirmation';
 import AcceptInvitation from './pages/AcceptInvitation';
+import Settings from './pages/Settings';
 
 import Team from './pages/Team';
 import {
@@ -66,20 +67,14 @@ function AuthenticatedApp() {
           <Route path="/dashboard">
             <Dashboard />
           </Route>
-          <Route path="/profile">
-            <Profile />
-          </Route>
-          <Route path="/posts">
-            <Profile />
+          <Route path="/tasks">
+            <Tasks />
           </Route>
           <Route path="/team">
             <Team />
           </Route>
-          <Route path="/billing">
-            <Profile />
-          </Route>
           <Route path="/settings">
-            <Profile />
+            <Settings />
           </Route>
           <Redirect to="/dashboard" />
         </Switch>

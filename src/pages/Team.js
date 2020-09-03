@@ -8,9 +8,10 @@ import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
 import IconButton from '@material-ui/core/IconButton';
-import EditIcon from '@material-ui/icons/Edit';
 import DeleteIcon from '@material-ui/icons/Delete';
 import InviteUser from '../components/InviteUser';
+import EditUser from '../components/EditUser';
+import DeleteUser from '../components/DeleteUser';
 import useUsers from '../hooks/use-users';
 
 export default function Team() {
@@ -47,12 +48,8 @@ export default function Team() {
             {users.map(user => (
               <TableRow key={user.id}>
                 <TableCell>
-                  <IconButton>
-                    <EditIcon />
-                  </IconButton>
-                  <IconButton>
-                    <DeleteIcon />
-                  </IconButton>
+                  <EditUser mutate={mutate} user={user} />
+                  <DeleteUser mutate={mutate} user={user} />
                 </TableCell>
                 <TableCell>
                   {user.email}
