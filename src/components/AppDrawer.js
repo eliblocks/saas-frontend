@@ -50,7 +50,7 @@ export default function AppDrawer() {
         { user.admin &&
           <React.Fragment>
       			<ListItem button component={RouterLink} to="/team">
-      				<ListItemText >
+      				<ListItemText>
       					Team
       				</ListItemText>
       			</ListItem>
@@ -62,6 +62,11 @@ export default function AppDrawer() {
           </React.Fragment>
         }
         <Divider className={classes.divider} />
+        <ListItem button component={RouterLink} to="/profile">
+          <ListItemText>
+            Profile
+          </ListItemText>
+        </ListItem>
         <ListItem button onClick={logOut}>
           <ListItemText>
             Log out

@@ -16,6 +16,7 @@ import ConfirmationEmailSent from './pages/ConfirmationEmailSent';
 import EmailConfirmation from './pages/EmailConfirmation';
 import AcceptInvitation from './pages/AcceptInvitation';
 import Settings from './pages/Settings';
+import Profile from './pages/Profile';
 
 import Team from './pages/Team';
 import {
@@ -43,8 +44,6 @@ export default function App() {
   axios.defaults.baseURL = process.env.REACT_APP_API_BASE_URL;
   axios.defaults.withCredentials = true;
 
-
-
   const { user, loading } = useUser();
   if (loading) { return "loading"}
 
@@ -64,6 +63,9 @@ function AuthenticatedApp() {
       <AppDrawer />
       <Container className={classes.content}>
         <Switch>
+          <Route path="/profile">
+            <Profile />
+          </Route>
           <Route path="/dashboard">
             <Dashboard />
           </Route>

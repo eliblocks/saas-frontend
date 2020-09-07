@@ -40,6 +40,7 @@ function SignUp() {
     .catch(error => {
       setIsError(true)
       const errors = error.response.data.errors
+      if (!errors) { return }
       if (errors["users.full_name"]) {
         setError('full_name', { type: "manual", message: `Full name ${errors["users.full_name"][0]}` })
       }
