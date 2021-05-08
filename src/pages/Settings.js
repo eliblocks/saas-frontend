@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import useAccount from '../hooks/use-account';
 import ChangePlan from '../components/ChangePlan';
@@ -14,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Settings() {
-  const { account, mutate, error } = useAccount();
+  const { account, mutate } = useAccount();
   const classes = useStyles();
 
   if (!account) { return "Loading..." }

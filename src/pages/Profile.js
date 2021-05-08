@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
 export default function Profile() {
   const [isEditing, setIsEditing] = useState(false);
   const [isError, setIsError] = useState();
-  const { user, error, mutate } = useUser();
+  const { user, mutate } = useUser();
   const { register, handleSubmit, errors, setError } = useForm();
   const classes = useStyles();
 

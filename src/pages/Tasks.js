@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import TableContainer from '@material-ui/core/TableContainer';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -24,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Team() {
   const classes = useStyles();
-  const { tasks, isLimited, mutate, error } = useTasks();
+  const { tasks, isLimited, mutate } = useTasks();
 
   function handleUpdate(id) {
     axios.patch(`/tasks/${id}`).then(() => mutate());

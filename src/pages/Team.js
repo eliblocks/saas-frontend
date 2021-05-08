@@ -1,21 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import TableContainer from '@material-ui/core/TableContainer';
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
 import TableBody from '@material-ui/core/TableBody';
 import TableRow from '@material-ui/core/TableRow';
 import TableCell from '@material-ui/core/TableCell';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
 import InviteUser from '../components/InviteUser';
 import EditUser from '../components/EditUser';
 import DeleteUser from '../components/DeleteUser';
 import useUsers from '../hooks/use-users';
 
 export default function Team() {
-  const { users, mutate, error } = useUsers();
+  const { users, mutate } = useUsers();
 
 
   if (!users) { return "Loading" }
