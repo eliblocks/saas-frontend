@@ -44,7 +44,7 @@ export default function Profile() {
     .catch(error => {
       setIsError(true)
       const errors = error.response.data.errors
-      console.log(errors)
+
       if (!errors) { return }
 
       if (errors.full_name) {

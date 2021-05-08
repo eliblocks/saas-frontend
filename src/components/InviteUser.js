@@ -27,9 +27,11 @@ export default function InviteUser({ mutate }) {
   const classes = useStyles();
 
   function onSubmit(data) {
+    console.log("invite data: ", data)
     axios.post('/users/invitation', {
       user: {
         email: data.email,
+        admin: data.admin,
       }
     })
     .then(() => {

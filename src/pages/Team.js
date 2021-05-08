@@ -52,7 +52,7 @@ export default function Team() {
                   {user.email}
                 </TableCell>
                 <TableCell>
-                  Admin
+                  {user.admin ? "Admin" : "Member"}
                 </TableCell>
                 <TableCell>
                   Yesterday
