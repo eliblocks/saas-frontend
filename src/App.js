@@ -45,7 +45,7 @@ export default function App() {
   axios.defaults.withCredentials = true;
 
   const { user, loading } = useUser();
-  if (loading) { return "loading"}
+  if (loading) { return null }
 
   return (
     <Router>
