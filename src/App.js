@@ -8,7 +8,6 @@ import AppDrawer from './components/AppDrawer'
 import LogIn from './pages/LogIn';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
-import Tasks from './pages/Tasks';
 import ResetPassword from './pages/ResetPassword';
 import EditPassword from './pages/EditPassword';
 import ResetEmailSent from './pages/ResetEmailSent';
@@ -68,9 +67,6 @@ function AuthenticatedApp() {
           </Route>
           <Route path="/dashboard">
             <Dashboard />
-          </Route>
-          <Route path="/tasks">
-            <Tasks />
           </Route>
           <Route path="/team">
             <Team />

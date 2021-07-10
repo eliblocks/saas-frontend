@@ -41,12 +41,7 @@ export default function AppDrawer() {
 		<Drawer variant="permanent" anchor="left" className={classes.drawer} classes={{paper: classes.drawerPaper}}>
 			<Typography className={classes.navLogo} variant="h4">SaaS</Typography>
 			<List>
-  			<ListItem button component={RouterLink} to="/tasks">
-  				<ListItemText>
-  					Tasks
-  				</ListItemText>
-  			</ListItem>
-        { user.admin &&
+        {user.admin &&
           <React.Fragment>
       			<ListItem button component={RouterLink} to="/team">
       				<ListItemText>
@@ -60,19 +55,19 @@ export default function AppDrawer() {
       			</ListItem>
           </React.Fragment>
         }
-        <Divider className={classes.divider} />
+        
         <ListItem button component={RouterLink} to="/profile">
           <ListItemText>
             Profile
           </ListItemText>
         </ListItem>
+        <Divider className={classes.divider} />
         <ListItem button onClick={logOut}>
           <ListItemText>
             Log out
           </ListItemText>
         </ListItem>
 			</List>
-
 		</Drawer>
 	);
 }
