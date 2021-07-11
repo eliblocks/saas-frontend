@@ -41,6 +41,11 @@ export default function AppDrawer() {
 		<Drawer variant="permanent" anchor="left" className={classes.drawer} classes={{paper: classes.drawerPaper}}>
 			<Typography className={classes.navLogo} variant="h4">SaaS</Typography>
 			<List>
+      <ListItem button component={RouterLink} to="/dashboard">
+        <ListItemText>
+          Dashboard
+        </ListItemText>
+      </ListItem>
         {user.admin &&
           <React.Fragment>
       			<ListItem button component={RouterLink} to="/team">
@@ -55,7 +60,6 @@ export default function AppDrawer() {
       			</ListItem>
           </React.Fragment>
         }
-        
         <ListItem button component={RouterLink} to="/profile">
           <ListItemText>
             Profile
