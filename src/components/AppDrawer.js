@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Link as RouterLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import useUser from '../hooks/use-user';
+import '../App.css';
 
 const useStyles = makeStyles((theme) => ({
   drawer: {
@@ -41,26 +42,26 @@ export default function AppDrawer() {
 		<Drawer variant="permanent" anchor="left" className={classes.drawer} classes={{paper: classes.drawerPaper}}>
 			<Typography className={classes.navLogo} variant="h4">SaaS</Typography>
 			<List>
-      <ListItem button component={RouterLink} to="/dashboard">
+      <ListItem button component={NavLink} to="/dashboard">
         <ListItemText>
           Dashboard
         </ListItemText>
       </ListItem>
         {user.admin &&
           <React.Fragment>
-      			<ListItem button component={RouterLink} to="/team">
+      			<ListItem button component={NavLink} to="/team">
       				<ListItemText>
       					Team
       				</ListItemText>
       			</ListItem>
-      			<ListItem button component={RouterLink} to="/settings">
+      			<ListItem button component={NavLink} to="/settings">
       				<ListItemText>
       					Settings
       				</ListItemText>
       			</ListItem>
           </React.Fragment>
         }
-        <ListItem button component={RouterLink} to="/profile">
+        <ListItem button component={NavLink} to="/profile">
           <ListItemText>
             Profile
           </ListItemText>
