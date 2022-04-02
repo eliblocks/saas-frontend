@@ -11,7 +11,7 @@ export default function EmailConfirmation() {
 
 	useEffect(() => {
 		axios.get("/users/confirmation" + location.search)
-		.then(() => history.push("/?message=Email confirmed! Please log in."))
+		.then(() => history.push("/login?message=Email confirmed! Please log in."))
 		.catch(error => {
 			const errorData = error.response.data
 			if (errorData.email) {
